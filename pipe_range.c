@@ -49,7 +49,7 @@ int main()
     char* buf[MAXSIZE];
     int x[2];
     close(fd1[1]);
-    read(fd1[0],&x,MAXSIZE);
+    read(fd1[0],x,MAXSIZE);
     printf("GOT FROM PARENT CHILD1\n");
 
 
@@ -86,7 +86,7 @@ int main()
           char* buf3[MAXSIZE];
           int x[2];
           close(fd3[1]);
-          read(fd3[0],x,sizeof(x));
+          read(fd3[0],x,MAXSIZE);
           printf("GOT FROM PARENT CHILD3\n" );
 
           printf("Range for Child3 is %d %d\n",x[0],x[1] );

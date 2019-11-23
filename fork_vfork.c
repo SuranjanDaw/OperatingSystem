@@ -10,7 +10,7 @@ void main()
   pid_t pid;
   int a = 10;
   int b = 15;
-  if((pid=fork()) == 0)
+  if((pid=vfork()) == 0)
   {
     //pid_t parent = getppid();
     printf("CHILD(%d) my parent is = %d\n",getpid(), getppid());
@@ -20,7 +20,7 @@ void main()
     printf("child bye\n" );
   }else if(pid > 0)
   {
-    int c = 14;a--;g--;
+    int c = 14;//a--;g--;
     wait(NULL);
     printf("PARENT(%d) my child is =%d\n",getpid(), pid );
 
