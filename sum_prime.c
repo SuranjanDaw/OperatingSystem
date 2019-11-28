@@ -51,8 +51,8 @@ int main()
   int n = 20;
   void *arg1, *arg2;
   pthread_t t1, t2;
-  pthread_create(&t1, NULL, prime, (char*)&n);
-  pthread_create(&t2, NULL, sum, (char*)&n);
+  pthread_create(&t1, NULL, prime, (void*)&n);
+  pthread_create(&t2, NULL, sum, (void*)&n);
 
   pthread_join(t1, &arg1);
   pthread_join(t2, &arg2);
