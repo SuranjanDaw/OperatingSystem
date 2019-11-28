@@ -7,10 +7,12 @@
 pid_t a,b;
 void sigusr1(int x)
 {
+  printf("CHILD i woke up\n");
   printf("Signal number from CHILD(%d) = %d\n",a,x );
 }
 void sigusr2(int x)
 {
+  printf("PARENT i woke up\n");
   printf("Signal number from PARENT(%d) = %d\n",b,x );
 }
 
@@ -24,12 +26,12 @@ void main()
   {
     printf("CHILD(%d) my parent is%d\n",getpid(),getppid() );
     sleep(2);
-    printf("CHILD i woke up\n");
+
     kill(b,SIGUSR1);
   }else if(a >0){
     printf("PARENT(%d) my child is %d\n",getpid(),a );
     sleep(2);
-    printf("PARENT i woke up\n");
+
     kill(a,SIGUSR2);
   }
 }

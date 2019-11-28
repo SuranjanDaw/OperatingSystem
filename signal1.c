@@ -8,7 +8,7 @@
 void func(int x)
 {
 
-  signal(SIGKILL,SIG_DFL);
+  signal(SIGINT,SIG_DFL);
   printf("SIGINT recieved= %d\n",x );
 
 }

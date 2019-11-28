@@ -20,7 +20,7 @@ int main()
     {
       printf("CHILD2(%d) my parent is = %d\n",getpid(), getppid() );
       sleep(2);
-      execlp("ls","ls",(char*)NULL);
+      execlp("ls","ls","-al",(char*)NULL);
       sleep(2);
     }else if( p2 > 0)
     {

@@ -117,7 +117,7 @@ int main()
         ar3[1] = (int)r1;
         close(fd1[0]);
         close(fd2[0]);
-        close(fd3[3]);
+        close(fd3[0]);
         write(fd1[1],ar1, sizeof(ar1)+1 );
         printf("Writing %d and %d to pipe 1\n",ar1[0],ar1[1] );
         write(fd2[1],ar2, sizeof(ar2)+1);

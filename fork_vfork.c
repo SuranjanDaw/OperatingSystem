@@ -21,12 +21,12 @@ void main()
   }else if(pid > 0)
   {
     int c = 14;//a--;g--;
-    wait(NULL);
+    //wait(NULL);
     printf("PARENT(%d) my child is =%d\n",getpid(), pid );
 
     printf("PARENT(%d) a = %d, b = %d,g=%d\n",getpid(), a,b,g );
     printf("parent bye\n" );
-    //wait(NULL);
+    wait(NULL);
     exit(0);
   }
 }

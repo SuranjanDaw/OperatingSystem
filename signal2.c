@@ -10,14 +10,14 @@ void func(int x)
 {
   int status=0;
   printf("Caught signal =%d\n", x);
-  /*kv = kill(pid,SIGKILL);
+  kv = kill(pid,SIGKILL);
   if(kv)
   {
     printf("Cannot kill %d\n",pid );
     waitpid(pid,&status,0);
   }else{
     printf("Process killed\n");
-  }*/
+  }
 
 }
 int main()

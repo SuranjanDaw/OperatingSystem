@@ -4,7 +4,12 @@
 #include<unistd.h>
 #include<stdlib.h>
 #include<string.h>
+#include<signal.h>
 #define MAXSIZE 50
+void func(int x)
+{
+  
+}
 int main()
 {
   int fd[2];
@@ -21,11 +26,10 @@ int main()
       while(1) {
       int size = read(fd[0], buf, MAXSIZE);
       printf("Got from parent:%s\n",buf );
-      if(strlen(buf)-1 == 0)
+      if(strcmp(buf,"quit") == 0)
       {
-        printf("ll\n" );
-          break;
-
+        printf("exiting child");
+        exit(0);
       }
       sleep(2);
     }
@@ -35,12 +39,19 @@ int main()
   {
     //close(fd[0]);
     char *ch = "Hello from Parent";
+    printf("Hello from Parent(%d) my child %d",getpid(),p );
     while(1) {
       char* d;
       printf("Enter some string=" );
       scanf("%s",d );
       printf("%s\n",d );
       //char* s = (char*)d;
+      if(strcmp(d,"quit")==0){
+        kill(p,SIGKILL);
+        printf("Exiting\n");
+        exit(0);
+      }
+
       write(fd[1], d, strlen(d)+1);
       printf("Written to pipe\n" );
       sleep(2);

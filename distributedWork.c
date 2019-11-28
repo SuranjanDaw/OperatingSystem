@@ -31,9 +31,11 @@ int main()
     }else if(p2 > 0)
     {
       printf("PARENT(%d) my child is= %d\n", getpid(), p2);
+
       wait(NULL);
+      printf("PARENT(%d): GOODBYE\n",getpid() );
     }
-    wait(NULL);
-    printf("PARENT(%d): GOODBYE\n",getpid() );
+    /*wait(NULL);
+    printf("PARENT(%d): GOODBYE\n",getpid() );*/
   }
 }
