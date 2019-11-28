@@ -1,0 +1,10 @@
+206 compare.sh
+192 welcom.sh
+141 readfile.sh
+139 odd_even.sh
+124 loop.sh
+109 add.sh
+60 abc.txt
+12 write.sh
+10 sum_of_digits.sh
+10 res.txt
